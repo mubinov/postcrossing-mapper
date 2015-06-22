@@ -1,0 +1,95 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body{
+    height: 100%;
+}
+body {
+    font-family: segoe ui light;
+    font-size: 15px;
+    width: 100%;
+    margin: 0 auto;
+    min-height: 100%;
+}
+#header {
+    position: relative;
+    height: 60px;
+    margin-top:0;
+}
+#world-map {
+    padding: 0px;
+    margin:0;
+}
+.first {
+    width:100%;
+}
+.first h1{
+    margin:0 auto;
+    color:#667E72;
+    font-size:18px;
+    width:400px;
+}
+.second {
+    margin-top: 5px;
+}
+.second .input{
+    float:left;
+    margin-left: 300px;
+}
+.second .input #username{
+    border:1px solid #d0d0d0;
+    background-color:#fcfcfc;
+    width:100px;
+}
+.second .input #submit{
+    position:relative;
+    left:-6px;
+    border:1px solid #adc5cf;
+    background: #e4f1f9; /* Old browsers */
+    background: -moz-linear-gradient(top, #e4f1f9 0%, #d5e7f3 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e4f1f9), color-stop(100%,#d5e7f3)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #e4f1f9 0%,#d5e7f3 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #e4f1f9 0%,#d5e7f3 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #e4f1f9 0%,#d5e7f3 100%); /* IE10+ */
+    background: linear-gradient(top, #e4f1f9 0%,#d5e7f3 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e4f1f9', endColorstr='#d5e7f3',GradientType=0 ); /* IE6-9 */
+    color:#7da2aa;
+    cursor: pointer;
+}
+.second div.copy{
+    float:right;
+    margin-right: 25px;
+    color:#667E72;
+    font-size: 13px;
+}
+.second div.copy a,
+.second div.copy a:hover,
+.second div.copy a:visited{
+    color:#667E72;
+}
+.waiter{
+    z-index: 100;
+    background-color: black;
+    opacity: 0.6;
+    background: url('../img/back.gif') 50% 50% no-repeat;
+    height: 100%;
+    display: block;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 100%;
+}
+.legend{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    line-height: 25px;
+}
+.legend .cube{
+    line-height: 25px;
+    width:25px;
+    height: 25px;
+    padding-left: 25px;
+    border:#667E72 solid 1px;
+}
