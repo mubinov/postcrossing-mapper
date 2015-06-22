@@ -15,7 +15,7 @@
     }
 
     @require_once('http/Spider.php');
-    $spider = new Spider();
+    $spider = new Loader();
     $post_array = array();
 
     // Loading start page for receive csrf token

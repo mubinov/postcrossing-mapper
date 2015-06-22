@@ -1,10 +1,10 @@
 <?php
 
 /**
- * Class Spider
+ * Class Loader
  * Loading page
  */
-class Spider {
+class Loader {
 
     private $cookie = '';
 
