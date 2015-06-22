@@ -8,7 +8,7 @@
         die();
     }
 
-    if(!isset($_GET['username']) || !preg_match('/^[a-zA-Z0-9\-_]{2,}$/', $_GET['username'])) {
+    if(!isset($_GET['username']) || !preg_match('/^[a-zA-Z0-9\-_]{2,30}$/', $_GET['username'])) {
         // Wrong format of username
         print "0";
         die();
@@ -18,6 +18,7 @@
     $spider = new Spider();
     $post_array = array();
 
+    // Loading start page for receive csrf token
     $html = $spider->load('https://www.postcrossing.com/', true);
 
     $token = '';
@@ -31,6 +32,7 @@
     $post_array['signin[username]'] = PC_USERNAME;
     $post_array['signin[password]'] = PC_PASSWORD;
 
+    // Authorize user and loading info about user in {$_GET['username']}
     if($spider->load('https://www.postcrossing.com/login', true, $post_array) &&
         $result = $spider->load("https://www.postcrossing.com/user/{$_GET['username']}/feed", true)){
         $result = trim(trim($result, '('), ')');
