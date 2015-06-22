@@ -1,10 +1,14 @@
 <?php
+$dev_conf = 'config/dev_config.php';
+if(file_exists($dev_conf)){
+    @require_once($dev_conf);
+}
 
 // Proxy is enabled
-define('PROXY_ENABLED', true);
+defined('PROXY_ENABLED') or define('PROXY_ENABLED', true);
 
 // http://poscrossing.com real user login
-define('PC_USERNAME', '');
+defined('PC_USERNAME') or define('PC_USERNAME', '');
 
 // http://poscrossing.com real user password
-define('PC_PASSWORD', '');
+defined('PC_PASSWORD') or define('PC_PASSWORD', '');
