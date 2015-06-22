@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Postcrossing Mapper</title>
+  <link rel="stylesheet" href="jquery-jvectormap-1.2.2.css" type="text/css" media="screen"/>
+  <script src="http://yandex.st/jquery/2.0.2/jquery.min.js"></script>
+  <script src="jquery-jvectormap-1.2.2.min.js"></script>
+  <script src="jquery-jvectormap-world-mill-en.js"></script>
+  <script src="postcrossing-mapper.js"></script>
+  <meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
+</head>
+<body>
+  <div id="wrapper">
+      <div id="header">
+          <div class="first">
+            <h1>Postcrossing.com World</h1>
+          </div>
+          <div class="second">
+            <form class="input">
+                Your name in PostCrossing.com
+                <input type="text" value="Willi" id="Willi" />
+                <input type="submit" value="Показать мой мир" id="submit" onclick="postcrossing_mapper();return false;"> 
+            </form>
+            <div class="copy"><a target="_blank" href="http://mubinov.com">Almaz Mubinov</a> &copy; 2015</div>
+
+          </div>
+      </div> 
+      <div id="world-map"></div>
+      <div class="legend">
+        <span class="cube" style="background:#628171">&nbsp;</span> - Sent here
+        <span class="cube" style="background:#23cecf">&nbsp;</span> - Recieved from here
+        <span class="cube" style="background:#A51618;">&nbsp;</span> - Bingo!
+      </div>     
+  </div>
+  <div class="waiter" style="display:none;"></div>
+</body>
+</html>
