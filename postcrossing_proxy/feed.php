@@ -14,12 +14,12 @@
         die();
     }
 
-    @require_once('http/Spider.php');
-    $spider = new Loader();
+    @require_once('http/Loader.php');
+    $loader = new Loader();
     $post_array = array();
 
     // Loading start page for receive csrf token
-    $html = $spider->load('https://www.postcrossing.com/', true);
+    $html = $loader->load('https://www.postcrossing.com/', true);
 
     $token = '';
     if(preg_match('/signin\[_csrf_token\].*?value=\"(.*?)\"/', $html, $matches)){
@@ -33,8 +33,8 @@
     $post_array['signin[password]'] = PC_PASSWORD;
 
     // Authorize user and loading info about user in {$_GET['username']}
-    if($spider->load('https://www.postcrossing.com/login', true, $post_array) &&
-        $result = $spider->load("https://www.postcrossing.com/user/{$_GET['username']}/feed", true)){
+    if($loader->load('https://www.postcrossing.com/login', true, $post_array) &&
+        $result = $loader->load("https://www.postcrossing.com/user/{$_GET['username']}/feed", true)){
         $result = trim(trim($result, '('), ')');
         print $result;
     }
