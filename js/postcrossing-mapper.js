@@ -61,7 +61,7 @@ function getPCList(username) {
             var gdpData = {};
             var i = 0;
             for (i in country_block['s']) {
-                if(country_block['s'].hasOwnProperty(i))continue;
+                if(!country_block['s'].hasOwnProperty(i))continue;
                 country = country_block['s'][i];
                 if (gdpData[country] == undefined) {
                     gdpData[country] = 0;
@@ -69,7 +69,7 @@ function getPCList(username) {
             }
 
             for (i in country_block['r']) {
-                if(country_block['r'].hasOwnProperty(i))continue;
+                if(!country_block['r'].hasOwnProperty(i))continue;
                 country = country_block['r'][i];
                 if (gdpData[country] == undefined || gdpData[country] == 50) {
                     gdpData[country] = 50;
