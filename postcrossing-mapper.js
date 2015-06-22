@@ -41,7 +41,7 @@ function initMap(gdpData){
 }
 function getPCList(username){
 	$.ajax({
-	     url: 'proxy.php?username='+username,             
+	     url: 'postcrossing_proxy/feed.php?username='+username,
 	     dataType : "json",   
 	     cache: true,
 	     error: function (textStatus) { 

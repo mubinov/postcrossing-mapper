@@ -1,32 +1,33 @@
 <?php
-    /*
-     * default login/pass
-     */
-    define('USERNAME', '');
-    define('PASSWORD', '');
+    // Load config
+    @require_once('config/config.php');
 
-    if(isset($_GET['username'])){
-        include 'Spider.php';
-        $spider = new Spider();
-        $post_array = array();
+    if(!isset($_GET['username']) || !preg_match('/^[a-zA-Z0-9\-_]{2,}$/', $_GET['username'])) {
+        // Wrong format of username
+        print "0";
+        die();
+    }
 
-        $html = $spider->load('https://www.postcrossing.com/', true);
+    @require_once('http/Spider.php');
+    $spider = new Spider();
+    $post_array = array();
 
-        $token = '';
-        if(preg_match('/signin\[_csrf_token\].*?value=\"(.*?)\"/', $html, $matches)){
-            if(count($matches)>1){
-                $token = $matches[1];
-            }
+    $html = $spider->load('https://www.postcrossing.com/', true);
+
+    $token = '';
+    if(preg_match('/signin\[_csrf_token\].*?value=\"(.*?)\"/', $html, $matches)){
+        if(count($matches)>1){
+            $token = $matches[1];
         }
+    }
 
-        $post_array['signin[_csrf_token]'] = $token;
-        $post_array['signin[username]'] = USERNAME;
-        $post_array['signin[password]'] = PASSWORD;
+    $post_array['signin[_csrf_token]'] = $token;
+    $post_array['signin[username]'] = USERNAME;
+    $post_array['signin[password]'] = PASSWORD;
 
-        if($spider->load('https://www.postcrossing.com/login', true, $post_array) &&
-            $result = $spider->load("https://www.postcrossing.com/user/{$_GET['username']}/feed", true)){
-            $result = trim(trim($result, '('), ')');
-            print $result;
-        }
+    if($spider->load('https://www.postcrossing.com/login', true, $post_array) &&
+        $result = $spider->load("https://www.postcrossing.com/user/{$_GET['username']}/feed", true)){
+        $result = trim(trim($result, '('), ')');
+        print $result;
     }
 ?>
