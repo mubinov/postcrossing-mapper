@@ -109,7 +109,7 @@ body {
     z-index: 100;
     background-color: black;
     opacity: 0.6;
-    background: url('back.gif') 50% 50% no-repeat;
+    background: url('../img/back.gif') 50% 50% no-repeat;
     height: 100%;
     display: block;
     position: absolute;
