@@ -95,7 +95,7 @@ body {
 .second div.copy a:visited{
     color:#667E72;
 }
-.waiter{
+#waiter{
     z-index: 100;
     background-color: black;
     opacity: 0.6;
@@ -107,16 +107,27 @@ body {
     left: 0;
     width: 100%;
 }
-.legend{
+#legend{
     position: absolute;
     bottom: 0;
-    right: 0;
+    left: 0;
     line-height: 25px;
+    color:#667E72;
+    font-size: 80%;
 }
-.legend .cube{
-    line-height: 25px;
-    width:25px;
+#legend>div {
+    height: 35px;
+    line-height: 35px;
+    padding: 0 5px;
+    clear: both;
+}
+#legend>div>div{
+    float:left;
+}
+#legend .round{
+    width: 25px;
     height: 25px;
-    padding-left: 25px;
-    border:#667E72 solid 1px;
+    border: #667E72 solid 1px;
+    border-radius: 15px;
+    margin: 4px 6px;
 }

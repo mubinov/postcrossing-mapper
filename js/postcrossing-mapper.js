@@ -1,3 +1,9 @@
+var colors = {
+    sent: '#00BCD4',
+    received: '#FFEB3B',
+    bingo: '#009688'
+};
+
 $(function () {
     var fixCenterHeight = function () {
         var clientH = $(window).height();
@@ -14,13 +20,11 @@ $(function () {
     });
     fixCenterHeight();
     postcrossing_mapper();
+
+    $('#legend-sent').css('background-color', colors.sent);
+    $('#legend-received').css('background-color', colors.received);
+    $('#legend-bingo').css('background-color', colors.bingo);
 });
-function start_waiter() {
-    $('.waiter').show();
-}
-function stop_waiter() {
-    $('.waiter').hide();
-}
 function initMap(gdpData) {
     $('#world-map')
     .html('')
@@ -29,13 +33,13 @@ function initMap(gdpData) {
         backgroundColor: '#f7f7f7',
         regionStyle: {
             initial: {
-                fill: '#8d8d8d'
+                fill: '#9E9E9E'
             }
         },
         series: {
             regions: [{
                 values: gdpData,
-                scale: ['#628171', '#00ffff', '#A51618']
+                scale: [colors.sent, colors.received, colors.bingo]
             }]
         }
     });
@@ -47,7 +51,7 @@ function getPCList(username) {
         cache: true,
         error: function (textStatus) {
             console.error(textStatus);
-            stop_waiter();
+            $('#waiter').hide();
         },
         success: function (data, textStatus) {
             var country_block = {
@@ -81,12 +85,12 @@ function getPCList(username) {
             if (my_country != '')gdpData[my_country] = 100;
 
             initMap(gdpData);
-            stop_waiter();
+            $('#waiter').hide();
         }
     });
 }
 function postcrossing_mapper() {
-    start_waiter();
+    $('#waiter').show();
     username = $('#username').val();
     if (username.length > 0) {
         getPCList(username);
