@@ -27,22 +27,22 @@ $(function () {
 });
 function initMap(gdpData) {
     $('#world-map')
-    .html('')
-    .vectorMap({
-        map: 'world_mill_en',
-        backgroundColor: '#f7f7f7',
-        regionStyle: {
-            initial: {
-                fill: '#9E9E9E'
+        .html('')
+        .vectorMap({
+            map: 'world_mill_en',
+            backgroundColor: '#f7f7f7',
+            regionStyle: {
+                initial: {
+                    fill: '#9E9E9E'
+                }
+            },
+            series: {
+                regions: [{
+                    values: gdpData,
+                    scale: [colors.sent, colors.received, colors.bingo]
+                }]
             }
-        },
-        series: {
-            regions: [{
-                values: gdpData,
-                scale: [colors.sent, colors.received, colors.bingo]
-            }]
-        }
-    });
+        });
 }
 function getPCList(username) {
     $.ajax({
@@ -65,7 +65,7 @@ function getPCList(username) {
             var gdpData = {};
             var i = 0;
             for (i in country_block['s']) {
-                if(!country_block['s'].hasOwnProperty(i))continue;
+                if (!country_block['s'].hasOwnProperty(i))continue;
                 country = country_block['s'][i];
                 if (gdpData[country] == undefined) {
                     gdpData[country] = 0;
@@ -73,7 +73,7 @@ function getPCList(username) {
             }
 
             for (i in country_block['r']) {
-                if(!country_block['r'].hasOwnProperty(i))continue;
+                if (!country_block['r'].hasOwnProperty(i))continue;
                 country = country_block['r'][i];
                 if (gdpData[country] == undefined || gdpData[country] == 50) {
                     gdpData[country] = 50;

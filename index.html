@@ -1,42 +1,51 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Postcrossing Mapper</title>
+    <title>Postcrossing Mapper</title>
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,300&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="css/jquery-jvectormap-1.2.2.css" type="text/css" media="screen"/>
-  <link rel="stylesheet" href="css/style.css" type="text/css" media="screen"/>
-  <meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
+    <link rel="stylesheet" href="css/jquery-jvectormap-1.2.2.css" type="text/css" media="screen"/>
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="screen"/>
+    <meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8"/>
 </head>
 <body>
-  <div id="wrapper">
-      <div id="header">
-          <div class="first">
+<div id="wrapper">
+    <div id="header">
+        <div class="first">
             <a href="">Postcrossing Mapper</a>
-          </div>
-          <div class="second">
+        </div>
+        <div class="second">
             <form class="input">
                 Your name in PostCrossing.com
-                <input type="text" value="willi" id="username" />
+                <input type="text" value="willi" id="username"/>
                 <button type="submit" id="submit" onclick="postcrossing_mapper();return false;">
                     <i></i>
                     Show me!
                 </button>
             </form>
             <div class="copy"><a target="_blank" href="http://mubinov.com">Almaz Mubinov</a> &copy; 2015</div>
-          </div>
-      </div> 
-      <div id="world-map"></div>
-      <div id="legend">
-        <div><div class="round" id="legend-sent"></div><div>Sent here</div></div>
-        <div><div class="round" id="legend-received"></div><div>Received from here</div></div>
-        <div><div class="round" id="legend-bingo"></div><div>Bingo!</div></div>
-      </div>     
-  </div>
-  <div id="waiter" style="display:none;"></div>
+        </div>
+    </div>
+    <div id="world-map"></div>
+    <div id="legend">
+        <div>
+            <div class="round" id="legend-sent"></div>
+            <div>Sent here</div>
+        </div>
+        <div>
+            <div class="round" id="legend-received"></div>
+            <div>Received from here</div>
+        </div>
+        <div>
+            <div class="round" id="legend-bingo"></div>
+            <div>Bingo!</div>
+        </div>
+    </div>
+</div>
+<div id="waiter" style="display:none;"></div>
 
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
-  <script src="js/jquery-jvectormap-1.2.2.min.js"></script>
-  <script src="js/jquery-jvectormap-world-mill-en.js"></script>
-  <script src="js/postcrossing-mapper.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+<script src="js/jquery-jvectormap-1.2.2.min.js"></script>
+<script src="js/jquery-jvectormap-world-mill-en.js"></script>
+<script src="js/script.js"></script>
 </body>
 </html>
