@@ -24,7 +24,6 @@ body {
     z-index: 10;
     width: 100%;
     left: 0;
-    padding-right: 10px;
     top: 0;
     -webkit-transition: all;
     -o-transition: all;
@@ -84,17 +83,6 @@ body {
     color:#7da2aa;
     cursor: pointer;
 }
-.second div.copy{
-    float:right;
-    margin-right: 25px;
-    color:#667E72;
-    font-size: 13px;
-}
-.second div.copy a,
-.second div.copy a:hover,
-.second div.copy a:visited{
-    color:#667E72;
-}
 #waiter{
     z-index: 100;
     background-color: black;
@@ -103,7 +91,7 @@ body {
     height: 100%;
     display: block;
     position: absolute;
-    top: 40px;
+    top: 0;
     left: 0;
     width: 100%;
 }
@@ -130,4 +118,20 @@ body {
     border: #667E72 solid 1px;
     border-radius: 15px;
     margin: 4px 6px;
+}
+#copy{
+    position: absolute;
+    bottom: 5px;
+    right: 10px;
+    color:#667E72;
+    font-size: 13px;
+    padding: 2px;
+    z-index: 1001;
+    background-color: rgba(255,255,255,0.75);
+    border-radius: 1px;
+}
+#copy a,
+#copy a:hover,
+#copy a:visited{
+    color:#667E72;
 }
