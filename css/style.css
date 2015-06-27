@@ -190,6 +190,8 @@ body {
 .inner.one {
     left: 0%;
     top: 0%;
+    -webkit-animation: rotate-one 1s linear infinite;
+    -moz-animation: rotate-one 1s linear infinite;
     animation: rotate-one 1s linear infinite;
     border-bottom: 3px solid #EFEFFA;
 }
@@ -197,6 +199,8 @@ body {
 .inner.two {
     right: 0%;
     top: 0%;
+    -webkit-animation: rotate-two 1s linear infinite;
+    -moz-animation: rotate-two 1s linear infinite;
     animation: rotate-two 1s linear infinite;
     border-right: 3px solid #EFEFFA;
 }
@@ -204,8 +208,64 @@ body {
 .inner.three {
     right: 0%;
     bottom: 0%;
+    -webkit-animation: rotate-three 1s linear infinite;
+    -moz-animation: rotate-three 1s linear infinite;
     animation: rotate-three 1s linear infinite;
     border-top: 3px solid #EFEFFA;
+}
+
+@-webkit-keyframes rotate-one {
+    0% {
+        -webkit-transform: rotateX(35deg) rotateY(-45deg) rotateZ(0deg);
+    }
+    100% {
+        -webkit-transform: rotateX(35deg) rotateY(-45deg) rotateZ(360deg);
+    }
+}
+
+@-webkit-keyframes rotate-two {
+    0% {
+        -webkit-transform: rotateX(50deg) rotateY(10deg) rotateZ(0deg);
+    }
+    100% {
+        -webkit-transform: rotateX(50deg) rotateY(10deg) rotateZ(360deg);
+    }
+}
+
+@-webkit-keyframes rotate-three {
+    0% {
+        -webkit-transform: rotateX(35deg) rotateY(55deg) rotateZ(0deg);
+    }
+    100% {
+        -webkit-transform: rotateX(35deg) rotateY(55deg) rotateZ(360deg);
+    }
+}
+
+@-moz-keyframes rotate-one {
+    0% {
+        -moz-transform: rotateX(35deg) rotateY(-45deg) rotateZ(0deg);
+    }
+    100% {
+        -moz-transform: rotateX(35deg) rotateY(-45deg) rotateZ(360deg);
+    }
+}
+
+@-moz-keyframes rotate-two {
+    0% {
+        -moz-transform: rotateX(50deg) rotateY(10deg) rotateZ(0deg);
+    }
+    100% {
+        -moz-transform: rotateX(50deg) rotateY(10deg) rotateZ(360deg);
+    }
+}
+
+@-moz-keyframes rotate-three {
+    0% {
+        -moz-transform: rotateX(35deg) rotateY(55deg) rotateZ(0deg);
+    }
+    100% {
+        -moz-transform: rotateX(35deg) rotateY(55deg) rotateZ(360deg);
+    }
 }
 
 @keyframes rotate-one {

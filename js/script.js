@@ -6,20 +6,20 @@ var colors = {
 
 $(function () {
     var fixCenterHeight = function () {
-        var clientH = $(window).height();
+        var client_h = $(window).height();
         var center = $('#world-map');
-        var heightDelta = $('#header').outerHeight(true) + center.outerHeight(true);
-        var fixCenterH = (clientH - heightDelta);
+        var height_delta = $('#header').outerHeight(true) + center.outerHeight(true);
+        var fix_center_h = (client_h - height_delta);
 
-        if (fixCenterH > center.height() || center.height() == null) {
-            center.height(fixCenterH);
+        if (fix_center_h > center.height() || center.height() == null) {
+            center.height(fix_center_h);
         }
     };
     $(window).resize(function () {
         fixCenterHeight();
     });
     fixCenterHeight();
-    postcrossing_mapper();
+    loadPostcrossingMap();
 
     $('#legend-sent').css('background-color', colors.sent);
     $('#legend-received').css('background-color', colors.received);
@@ -44,7 +44,7 @@ function initMap(gdpData) {
             }
         });
 }
-function getPCList(username) {
+function getPostcrossingData(username) {
     $.ajax({
         url: 'postcrossing_proxy/feed.php?username=' + username,
         dataType: "json",
@@ -89,11 +89,11 @@ function getPCList(username) {
         }
     });
 }
-function postcrossing_mapper() {
-    $('#waiter').show();
+function loadPostcrossingMap() {
     username = $('#username').val();
     if (username.length > 0) {
-        getPCList(username);
+        $('#waiter').show();
+        getPostcrossingData(username);
     } else {
         console.error('Empty user name!');
     }
