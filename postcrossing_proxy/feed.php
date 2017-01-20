@@ -19,7 +19,7 @@
     $post_array = array();
 
     // Loading start page for receive csrf token
-    $html = $loader->load('https://www.postcrossing.com/', true);
+    $html = $loader->load('https://www.postcrossing.com/login?', true);
 
     $token = '';
     if(preg_match('/signin\[_csrf_token\].*?value=\"(.*?)\"/', $html, $matches)){
