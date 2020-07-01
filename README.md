@@ -1,3 +1,5 @@
+[Project is deprecated and no longer supported
+
 # Postcrossing Mapper
 
 Postcrossing.com is a service for postcrossers - people who love send and receive postcard. **Poscrossing Mapper** is a small script for Postcrossing.com users. This script shows world map where you can find in which countries did you sent postcards and from which received.
