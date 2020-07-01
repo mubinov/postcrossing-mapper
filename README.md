@@ -1,4 +1,4 @@
-[Project is deprecated and no longer supported
+Project is deprecated and no longer supported
 
 # Postcrossing Mapper
 
